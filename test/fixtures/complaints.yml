@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  complaint_type: MyString
+  complaint_photo: MyString
+  latitude: 1.5
+  longitude: 1.5
+  description: MyText
+  complaint_status: MyString
+  date_time_created: 2018-11-05 17:46:32
+  date_time_updated: 2018-11-05 17:46:32
+  count_complaint: 1
+
+two:
+  user_id: 1
+  complaint_type: MyString
+  complaint_photo: MyString
+  latitude: 1.5
+  longitude: 1.5
+  description: MyText
+  complaint_status: MyString
+  date_time_created: 2018-11-05 17:46:32
+  date_time_updated: 2018-11-05 17:46:32
+  count_complaint: 1

@@ -1,0 +1,67 @@
+<%= form_with(model: complaint, local: true) do |form| %>
+  <% if complaint.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(complaint.errors.count, "error") %> prohibited this complaint from being saved:</h2>
+
+      <ul>
+      <% complaint.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :complaint_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :complaint_type %>
+    <%= form.text_field :complaint_type, id: :complaint_complaint_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :complaint_photo %>
+    <%= form.text_field :complaint_photo, id: :complaint_complaint_photo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude, id: :complaint_latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude, id: :complaint_longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :complaint_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :complaint_status %>
+    <%= form.text_field :complaint_status, id: :complaint_complaint_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_time_created %>
+    <%= form.datetime_select :date_time_created, id: :complaint_date_time_created %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_time_updated %>
+    <%= form.datetime_select :date_time_updated, id: :complaint_date_time_updated %>
+  </div>
+
+  <div class="field">
+    <%= form.label :count_complaint %>
+    <%= form.number_field :count_complaint, id: :complaint_count_complaint %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @complaint.user_id %>
+</p>
+
+<p>
+  <strong>Complaint type:</strong>
+  <%= @complaint.complaint_type %>
+</p>
+
+<p>
+  <strong>Complaint photo:</strong>
+  <%= @complaint.complaint_photo %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @complaint.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @complaint.longitude %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @complaint.description %>
+</p>
+
+<p>
+  <strong>Complaint status:</strong>
+  <%= @complaint.complaint_status %>
+</p>
+
+<p>
+  <strong>Date time created:</strong>
+  <%= @complaint.date_time_created %>
+</p>
+
+<p>
+  <strong>Date time updated:</strong>
+  <%= @complaint.date_time_updated %>
+</p>
+
+<p>
+  <strong>Count complaint:</strong>
+  <%= @complaint.count_complaint %>
+</p>
+
+<%= link_to 'Edit', edit_complaint_path(@complaint) %> |
+<%= link_to 'Back', complaints_path %>

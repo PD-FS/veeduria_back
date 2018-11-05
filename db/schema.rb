@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181105153034) do
+ActiveRecord::Schema.define(version: 20181105224644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,4 +21,47 @@ ActiveRecord::Schema.define(version: 20181105153034) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "complaints", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "complaint_type"
+    t.string "complaint_photo"
+    t.float "latitude"
+    t.float "longitude"
+    t.text "description"
+    t.string "complaint_status"
+    t.datetime "date_time_created"
+    t.datetime "date_time_updated"
+    t.integer "count_complaint"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "ticket_number"
+    t.string "complaint_photo"
+    t.bigint "complaint_id"
+    t.datetime "date_time_created"
+    t.float "reliability_score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["complaint_id"], name: "index_tickets_on_complaint_id"
+  end
+
+  create_table "user_roles", force: :cascade do |t|
+    t.bigint "role_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["role_id"], name: "index_user_roles_on_role_id"
+  end
+
+  add_foreign_key "tickets", "complaints"
+  add_foreign_key "user_roles", "roles"
 end

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  ticket_number: 1
+  complaint_photo: MyString
+  complaint: one
+  date_time_created: 2018-11-05 17:46:44
+  reliability_score: 1.5
+
+two:
+  user_id: 1
+  ticket_number: 1
+  complaint_photo: MyString
+  complaint: two
+  date_time_created: 2018-11-05 17:46:44
+  reliability_score: 1.5
